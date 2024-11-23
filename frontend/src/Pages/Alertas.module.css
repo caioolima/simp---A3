@@ -83,6 +83,13 @@
     margin-top: 10px; /* Espaçamento acima da imagem */
   }
 
+  .noData {
+    font-size: 18px;
+    color: #777;
+    text-align: center;
+    margin-top: 20px;
+  }  
+
   /* Botão para abrir o modal */
 .detailButton {
   background-color: var(--color-details, #16bb1f); /* Cor de destaque principal */
