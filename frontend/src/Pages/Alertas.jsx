@@ -13,7 +13,7 @@ function Alertas() {
 
   useEffect(() => {
     // Buscar alertas
-    fetch('hhttps://simp-a3.onrender.com/api/alertas')
+    fetch('https://simp-a3.onrender.com/api/alertas')
       .then((response) => response.json())
       .then((data) => {
         setAlertas(data);
