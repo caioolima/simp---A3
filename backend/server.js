@@ -11,7 +11,7 @@ const app = express();
 
 // Middleware
 // Lista de origens permitidas (ou '*' para permitir qualquer origem)
-const allowedOrigins = ['http://localhost:3000', 'https://simp-poa.vercel.app/'];
+const allowedOrigins = ['http://localhost:3000', 'https://simp-poa.vercel.app'];
 
 // Configuração do CORS
 const corsOptions = {
