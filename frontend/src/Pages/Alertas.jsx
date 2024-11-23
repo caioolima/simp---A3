@@ -13,7 +13,7 @@ function Alertas() {
 
   useEffect(() => {
     // Buscar alertas
-    fetch('http://localhost:5000/api/alertas')
+    fetch('hhttps://simp-a3.onrender.com/api/alertas')
       .then((response) => response.json())
       .then((data) => {
         setAlertas(data);
@@ -23,7 +23,7 @@ function Alertas() {
       });
 
     // Buscar formulários
-    fetch('http://localhost:5000/api/form')
+    fetch('https://simp-a3.onrender.com/api/form')
       .then((response) => response.json())
       .then((data) => {
         setFormularios(data);

@@ -12,8 +12,8 @@ const Alerts = () => {
   const fetchAlerts = async () => {
     try {
       const [recentCasesResponse, activeAlertsResponse] = await Promise.all([
-        fetch('http://localhost:5000/api/alertas/criticos'),
-        fetch('http://localhost:5000/api/alertas/em-alerta'),
+        fetch('https://simp-a3.onrender.com/api/alertas/criticos'),
+        fetch('https://simp-a3.onrender.com/api/alertas/em-alerta'),
       ]);
 
       if (!recentCasesResponse.ok || !activeAlertsResponse.ok) {

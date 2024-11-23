@@ -10,7 +10,23 @@ require('dotenv').config(); // Para carregar as variáveis de ambiente
 const app = express();
 
 // Middleware
-app.use(cors()); // Habilita CORS
+// Lista de origens permitidas (ou '*' para permitir qualquer origem)
+const allowedOrigins = ['http://localhost:3000', 'https://connecter-life.vercel.app'];
+
+// Configuração do CORS
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Verifica se a origem da requisição está na lista de origens permitidas
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'DELETE', 'OPTIONS', 'PUT'], // Métodos permitidos
+  allowedHeaders: ['Content-Type', 'Authorization'], // Cabeçalhos permitidos (adicionando 'Authorization')
+};
+app.use(cors(corsOptions));
 app.use(bodyParser.json()); // Configuração para interpretar JSON
 
 // Conectar-se ao MongoDB
