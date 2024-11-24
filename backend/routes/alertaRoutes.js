@@ -16,4 +16,8 @@ router.get('/em-alerta', alertaController.acharEmAlerta);
 // Rota para listar alertas com status "crítico"
 router.get('/criticos', alertaController.acharEmCritico);
 
+// Rota para buscar um alerta pelo nome
+router.get('/nome/:nomePoste', alertaController.acharAlertaPorNome); // Nova rota
+
+
 module.exports = router;

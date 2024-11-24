@@ -80,3 +80,18 @@ exports.acharEmCritico = async (req, res) => {
     res.status(500).send(`Erro ao buscar alertas críticos: ${error.message}`);
   }
 };
+
+exports.acharAlertaPorNome = async (req, res) => {
+  const nomePoste = req.params.nomePoste; 
+  try {
+    // Usando $regex para busca case-insensitive
+    const alerta = await Alerta.findOne({ nome: { $regex: `^${nomePoste}$`, $options: 'i' } });
+    if (alerta) {
+      res.json(alerta);
+    } else {
+      res.status(404).send('Alerta não encontrado.');
+    }
+  } catch (error) {
+    res.status(500).send(`Erro ao buscar alerta: ${error.message}`);
+  }
+};

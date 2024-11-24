@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 import Principal from '../components/principal';
 import Footer from '../components/home/Footer';
 import Modal from '../components/Alertas e Formulário/modal'; // Importar o componente Modal
@@ -10,6 +11,7 @@ function Alertas() {
   const [loading, setLoading] = useState(true);
   const [selectedForm, setSelectedForm] = useState(null); // Estado para armazenar o chamado selecionado
   const [modalVisible, setModalVisible] = useState(false); // Controla a exibição do modal
+  const navigate = useNavigate(); // Hook para navegação
 
   useEffect(() => {
     // Buscar alertas
@@ -44,6 +46,11 @@ function Alertas() {
     setModalVisible(false); // Fecha o modal
   };
 
+  const goToPostePage = (nomePoste) => {
+    // Navegar para a página do poste usando o nome
+    navigate(`/poste/${encodeURIComponent(nomePoste)}`);
+  };
+
   return (
     <div className={styles.alertasContainer}>
       <div className={styles.content}>
@@ -56,7 +63,7 @@ function Alertas() {
           <>
             <h2 className={styles.subTitle}>Lista de Alertas</h2>
             {alertas.length === 0 ? (
-              <p className={styles.noData}>Nenhum alerta encontrado.</p> // Exibe uma mensagem caso não haja alertas
+              <p className={styles.noData}>Nenhum alerta encontrado.</p>
             ) : (
               <ul className={styles.alertList}>
                 {alertas.map((alerta) => (
@@ -76,6 +83,12 @@ function Alertas() {
                     <p className={styles.alertText}>
                       <strong>Data:</strong> {new Date(alerta.data_hora).toLocaleString()}
                     </p>
+                    <button
+                      onClick={() => goToPostePage(alerta.nome)} // Navegar para a página do poste
+                      className={styles.detailButton}
+                    >
+                      Ver Detalhes
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -83,7 +96,7 @@ function Alertas() {
 
             <h2 className={styles.subTitle}>Lista de Chamados</h2>
             {formularios.length === 0 ? (
-              <p className={styles.noData}>Nenhum formulário encontrado.</p> // Exibe uma mensagem caso não haja formulários
+              <p className={styles.noData}>Nenhum formulário encontrado.</p>
             ) : (
               <ul className={styles.alertList}>
                 {formularios.map((formulario) => (
@@ -102,7 +115,7 @@ function Alertas() {
                     </p>
                     <button
                       onClick={() => openModal(formulario)}
-                      className={styles.detailButton} // Aplicando a classe CSS
+                      className={styles.detailButton}
                     >
                       Ver detalhes
                     </button>
