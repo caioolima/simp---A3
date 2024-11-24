@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const path = require('path');
 const Form = require('../models/formModel');
 
 // Função para listar todos os formulários
@@ -35,6 +36,10 @@ const criarFormulario = async (req, res) => {
     // Salva o novo formulário
     await novoFormulario.save();
 
+    // Ajuste para adicionar "não enviado" caso não haja imagem ou complemento
+    const imagem = imagemUrl || 'Não enviada';
+    const complementoTexto = complemento || 'Não informado';
+
     // Enviar um e-mail quando o formulário for criado
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -48,15 +53,58 @@ const criarFormulario = async (req, res) => {
       from: 'caioolima1994@gmail.com',
       to: 'caiolimaa2002@gmail.com',
       subject: 'Novo formulário criado',
-      text: `Um novo formulário foi criado com os seguintes dados:\n
-            CEP: ${cep}\n
-            Rua: ${rua}\n
-            Bairro: ${bairro}\n
-            Cidade: ${cidade}\n
-            Estado: ${estado}\n
-            Complemento: ${complemento}\n
-            Imagem URL: ${imagemUrl}\n
-            Status: aguardando verificação`,
+      html: `
+        <html>
+          <head>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    background-color: #e9f7f6;
+                    color: #333;
+                    padding: 20px;
+                }
+                .header {
+                    background-color: #2c3e50;
+                    padding: 20px;
+                    text-align: center;
+                    color: white;
+                    border-radius: 10px 10px 0 0;
+                }
+                .content p {
+                    font-size: 18px;
+                    line-height: 1.6;
+                }
+                .address {
+                    font-weight: bold;
+                    color: #e74c3c;
+                }
+            </style>
+          </head>
+          <body>
+            <div class="header">
+              <img src="cid:logo" alt="Logo" style="max-width: 150px;">
+              <h1>Formulário Criado</h1>
+            </div>
+            <div class="content">
+              <p><strong>CEP:</strong> ${cep}</p>
+              <p><strong>Rua:</strong> ${rua}</p>
+              <p><strong>Bairro:</strong> ${bairro}</p>
+              <p><strong>Cidade:</strong> ${cidade}</p>
+              <p><strong>Estado:</strong> ${estado}</p>
+              <p><strong>Complemento:</strong> ${complementoTexto}</p>
+              <p><strong>Imagem URL:</strong> ${imagem}</p>
+              <p><strong>Status:</strong> aguardando verificação</p>
+            </div>
+          </body>
+        </html>
+      `,
+      attachments: [
+        {
+          filename: 'logo.png',
+          path: path.join(__dirname, 'logo.png'),
+          cid: 'logo', // Identificador único para referenciar a imagem no corpo do e-mail
+        },
+      ],
     };
 
     // Envia o e-mail
