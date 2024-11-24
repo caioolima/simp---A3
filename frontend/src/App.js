@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import Alertas from './Pages/Alertas';
 import Formulario from './Pages/Formulario';
-import PosteDetalhes from './components/Poste Details/PosteDetalhes';
+import PosteDetalhes from './Pages/Poste Details/PosteDetalhes';
 
 function App() {
   return (
