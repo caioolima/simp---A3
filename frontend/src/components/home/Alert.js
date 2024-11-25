@@ -63,7 +63,7 @@ const Alerts = () => {
         {/* Card de Alertas Críticos */}
         <div className={styles.alertCard}>
           <FaExclamationTriangle className={styles.alertIcon} />
-          <h4>Alertas críticos</h4>
+          <h4 className={styles.alertSub}>Alertas críticos</h4>
           <ul>
             {recentCases.length > 0 ? (
               recentCases.map((caseItem) => (
