@@ -182,8 +182,11 @@ body {
     justify-content: space-around;
     gap: 20px;
     flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
+/* Responsividade para telas pequenas */
 .featureCard {
     background-color: white;
     padding: 20px;
@@ -493,6 +496,11 @@ body {
     .featureCard {
         max-width: 100%;
         height: auto;
+    }
+
+    .featureCard h4 {
+        font-size: 1.3rem; /* Ajusta o tamanho do título */
+        margin-bottom: 20px;
     }
 
     .alertCards {
