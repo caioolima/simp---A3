@@ -250,7 +250,7 @@ body {
 .alertCards {
     display: flex;
     justify-content: center;
-    margin: auto;
+    margin: 0 auto;
     flex-wrap: wrap;
     width: 50%;
 }
@@ -264,7 +264,7 @@ body {
     /* Bordas mais arredondadas para modernidade */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     /* Sombra mais suave */
-    max-width: 620px;
+    max-width: 600px;
     margin: 10px auto;
     /* Margem reduzida no eixo vertical */
     opacity: 0;
@@ -275,7 +275,6 @@ body {
     align-items: flex-start;
     justify-content: space-between;
 }
-
 
 /* Efeito ao passar o mouse sobre o card */
 .alertCard:hover {
@@ -501,7 +500,7 @@ body {
     }
 
     .alertCard {
-        max-width: 100%;
+        width: 100%;
         height: auto;
     }
 
