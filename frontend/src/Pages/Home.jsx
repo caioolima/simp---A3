@@ -13,14 +13,14 @@ function Home() {
   return (
     <div className={styles.container}>
       <Header toggleMenu={toggleMenu} isMobileMenuOpen={isMobileMenuOpen} />
-      
+
       <Section
         title="Tecnologia de Ponta para a Segurança Pública"
         description="O sistema de monitoramento de postes utiliza sensores avançados para monitorar a integridade dos postes..."
         imageSrc="https://images.pexels.com/photos/16880204/pexels-photo-16880204/free-photo-of-homem-trabalhando-de-pe-escada.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         imageAlt="Sistema de Monitoramento"
       />
-      
+
       <Features />
       <Alerts />
       <Footer />
