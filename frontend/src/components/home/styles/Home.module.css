@@ -255,7 +255,7 @@ body {
     justify-content: center;
     margin: 0 auto;
     flex-wrap: wrap;
-    width: 50%;
+    width: 100%;
 }
 
 /* Estilo principal para o card de alerta */
@@ -510,7 +510,7 @@ body {
     }
 
     .alertCards {
-        width: 100%;
+        max-width: 100%;
     }
 
     .alertCard {
