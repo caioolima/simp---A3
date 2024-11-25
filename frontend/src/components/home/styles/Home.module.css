@@ -102,44 +102,56 @@ body {
     color: white;
 }
 
-/* Seção sobre o produto */
+/* Estilos gerais da seção */
 .section {
     background-color: #f7f7f7;
-    padding: 60px 0;
+    padding: 60px 20px;
     display: flex;
     justify-content: center;
     opacity: 0;
     animation: fadeInUp 1s forwards 0.5s;
 }
 
+/* Ajustando o layout dentro da section */
 .sectionContent {
     display: flex;
     align-items: center;
     max-width: 1200px;
     width: 100%;
+    flex-wrap: wrap;
+    /* Permite que os itens se movam para baixo em telas menores */
 }
 
+/* Container de texto com padding ajustável */
 .textContainer {
     flex: 1;
-    padding-right: 250px;
+    padding-right: 20px;
+    /* Diminuímos o padding para ajustar melhor em telas pequenas */
+    margin-bottom: 20px;
+    /* Adiciona espaçamento inferior para pequenas telas */
 }
 
+/* Subtítulo com tamanho de fonte adaptável */
 .subtitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #001f2d;
     margin-bottom: 20px;
 }
 
+/* Texto com ajuste de tamanho em telas menores */
 .text {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #333;
     line-height: 1.5;
 }
 
+/* Container da imagem com flexibilidade */
 .imageContainer {
     flex: 1;
+    text-align: center;
 }
 
+/* Imagem responsiva */
 .productImage {
     width: 100%;
     max-width: 500px;
@@ -245,12 +257,16 @@ body {
 
 /* Estilo principal para o card de alerta */
 .alertCard {
-    background-color: #ffffff; /* Fundo branco limpo */
+    background-color: #ffffff;
+    /* Fundo branco limpo */
     padding: 20px;
-    border-radius: 12px; /* Bordas mais arredondadas para modernidade */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+    border-radius: 12px;
+    /* Bordas mais arredondadas para modernidade */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Sombra mais suave */
     max-width: 620px;
-    margin: 10px auto; /* Margem reduzida no eixo vertical */
+    margin: 10px auto;
+    /* Margem reduzida no eixo vertical */
     opacity: 0;
     animation: fadeInUp 1s forwards 1.5s;
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease-out;
@@ -263,13 +279,16 @@ body {
 
 /* Efeito ao passar o mouse sobre o card */
 .alertCard:hover {
-    transform: translateY(-15px); /* Eleva o card ao passar o mouse */
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15); /* Sombra mais intensa */
+    transform: translateY(-15px);
+    /* Eleva o card ao passar o mouse */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    /* Sombra mais intensa */
 }
 
 /* Estilo para o ícone de alerta */
 .alertIcon {
-    font-size: 3rem; /* Ícone maior para destaque */
+    font-size: 3rem;
+    /* Ícone maior para destaque */
     color: #ea4f97;
     margin-bottom: 20px;
     transition: color 0.3s ease-out;
@@ -277,12 +296,14 @@ body {
 
 /* Alteração de cor do ícone no hover do card */
 .alertCard:hover .alertIcon {
-    color: #16bb1f; /* Transição suave para a cor verde */
+    color: #16bb1f;
+    /* Transição suave para a cor verde */
 }
 
 /* Lista de itens no card */
 .alertCard ul {
-    list-style: none; /* Remove os marcadores padrão */
+    list-style: none;
+    /* Remove os marcadores padrão */
     padding: 0;
     margin: 0 10px;
     width: 100%;
@@ -290,10 +311,12 @@ body {
 
 /* Estilo individual dos itens */
 .alertCard li {
-    font-size: 1rem; /* Tamanho de fonte ajustado */
+    font-size: 1rem;
+    /* Tamanho de fonte ajustado */
     color: #333;
     padding: 15px 20px;
-    border-bottom: 1px solid #ddd; /* Linha separadora mais discreta */
+    border-bottom: 1px solid #ddd;
+    /* Linha separadora mais discreta */
     display: flex;
     flex-direction: column;
     transition: background-color 0.3s ease-out, transform 0.3s ease-out;
@@ -309,20 +332,24 @@ body {
 /* Destaque no texto principal */
 .alertCard li strong {
     color: #16bb1f;
-    font-weight: 700; /* Negrito forte */
+    font-weight: 700;
+    /* Negrito forte */
     font-size: 1.1rem;
 }
 
 /* Texto complementar */
 .alertCard li span {
     font-size: 0.9rem;
-    color: #777; /* Cor de texto secundária */
+    color: #777;
+    /* Cor de texto secundária */
 }
 
 /* Efeito de hover no item */
 .alertCard li:hover {
-    background-color: #f9f9f9; /* Fundo mais claro no hover */
-    transform: translateX(3px); /* Move levemente o item para a direita */
+    background-color: #f9f9f9;
+    /* Fundo mais claro no hover */
+    transform: translateX(3px);
+    /* Move levemente o item para a direita */
     cursor: pointer;
     border-radius: 8px;
 }
@@ -335,7 +362,8 @@ body {
     top: 0;
     height: 100%;
     width: 5px;
-    background-color: #16bb1f; /* Indicador verde à esquerda */
+    background-color: #16bb1f;
+    /* Indicador verde à esquerda */
     border-radius: 0 8px 8px 0;
     transition: background-color 0.3s ease-out;
 }
@@ -429,17 +457,34 @@ body {
 
     .sectionContent {
         flex-direction: column;
+        /* Organiza os itens em coluna para telas menores */
         align-items: center;
     }
 
     .textContainer {
         padding-right: 0;
+        /* Remove o padding extra para telas menores */
         text-align: center;
-        padding-bottom: 40px;
+        /* Centraliza o texto */
+        margin-bottom: 40px;
+        /* Ajuste no espaçamento */
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        /* Ajusta o tamanho da fonte para um texto mais legível */
+    }
+
+    .text {
+        font-size: 0.9rem;
+        /* Ajusta o tamanho da fonte para telas menores */
     }
 
     .productImage {
         max-width: 100%;
+        /* Garante que a imagem não ultrapasse a largura da tela */
+        height: auto;
+        /* Mantém a proporção da imagem */
     }
 
     .features {
@@ -451,7 +496,7 @@ body {
         height: auto;
     }
 
-    .alertCards{
+    .alertCards {
         width: 100%;
     }
 
