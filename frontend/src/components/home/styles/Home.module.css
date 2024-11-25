@@ -279,6 +279,7 @@ body {
     justify-content: space-between;
 }
 
+
 /* Efeito ao passar o mouse sobre o card */
 .alertCard:hover {
     transform: translateY(-15px);
@@ -499,7 +500,8 @@ body {
     }
 
     .featureCard h4 {
-        font-size: 1.3rem; /* Ajusta o tamanho do título */
+        font-size: 1.3rem;
+        /* Ajusta o tamanho do título */
         margin-bottom: 20px;
     }
 
