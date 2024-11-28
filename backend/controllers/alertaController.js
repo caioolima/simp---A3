@@ -16,9 +16,9 @@
 
     // Determinar o status com base no grau de inclinação
     let status = "";
-    if (grau_inclinacao >= 120) {
+    if (grau_inclinacao >= 20) {
       status = "crítico";
-    } else if (grau_inclinacao >= 100 && grau_inclinacao <= 119) {
+    } else if (grau_inclinacao >= 10 && grau_inclinacao <= 19) {
       status = "em alerta";
     } else {
       return res.status(400).send("Grau de inclinação fora das faixas de alerta.");
