@@ -10,24 +10,23 @@
     }
   };
 
-  // Função para criar ou atualizar um alerta
   exports.criarOuAtualizarAlerta = async (req, res) => {
     const { nome, endereco, grau_inclinacao, data_hora } = req.body;
-
-    // Determinar o status com base no grau de inclinação
+  
+    // Determinar o status com base no grau de inclinação, considerando valores negativos
     let status = "";
-    if (grau_inclinacao >= 20) {
+    if (Math.abs(grau_inclinacao) >= 20) {
       status = "crítico";
-    } else if (grau_inclinacao >= 1 && grau_inclinacao <= 9) {
+    } else if (Math.abs(grau_inclinacao) >= 1 && Math.abs(grau_inclinacao) <= 9) {
       status = "em alerta";
     } else {
       return res.status(400).send("Grau de inclinação fora das faixas de alerta.");
     }
-
+  
     try {
       // Verificar se o poste já existe no banco
       const alertaExistente = await Alerta.findOne({ nome });
-
+  
       if (alertaExistente) {
         // Atualizar o registro existente apenas se o grau de inclinação ou status mudou
         if (
@@ -59,7 +58,7 @@
     } catch (error) {
       res.status(500).send(`Erro ao salvar o alerta: ${error.message}`);
     }
-  };
+  };  
 
 // Função para encontrar alertas por status
 exports.acharEmAlerta = async (req, res) => {
