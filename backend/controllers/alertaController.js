@@ -17,7 +17,7 @@
     let status = "";
     if (Math.abs(grau_inclinacao) >= 20) {
       status = "crítico";
-    } else if (Math.abs(grau_inclinacao) >= 1 && Math.abs(grau_inclinacao) <= 9) {
+    } else if (Math.abs(grau_inclinacao) >= 9 && Math.abs(grau_inclinacao) <= 19) {
       status = "em alerta";
     } else {
       return res.status(400).send("Grau de inclinação fora das faixas de alerta.");
