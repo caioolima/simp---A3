@@ -40,9 +40,8 @@ Copiar código
 git clone https://github.com/seu-usuario/simp.git
 
 - **Navegue para o diretório do projeto:
-bash
-Copiar código
-cd simp
+
+- **cd frontend/cd backend
 
 - **Instale as dependências:
 - **npm install
