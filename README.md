@@ -65,16 +65,11 @@ Copiar código
 cd simp
 
 - **Instale as dependências:
-bash
-Copiar código
-npm install
-Configure as variáveis de ambiente no arquivo .env.
+- **npm install
+- **Configure as variáveis de ambiente no arquivo .env.
 
 - **Inicie o servidor de desenvolvimento:
-
-bash
-Copiar código
-npm start
+- **npm start
 
 - **Acesse o projeto no navegador:
 http://localhost:3000
