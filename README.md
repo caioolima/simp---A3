@@ -14,35 +14,15 @@ Bem-vindo ao **SIMP**, um sistema desenvolvido para monitorar a inclinação de 
 
 ---
 
-### 📁 Estrutura do Projeto
-
-```plaintext
-SIMP/
-├── public/
-├── src/
-│   ├── components/
-│   │   ├── Alertas e Formulário/
-│   │   │   └── modal.jsx
-│   │   ├── home/
-│   │   │   └── Footer.jsx
-│   │   └── principal.jsx
-│   ├── pages/
-│   │   └── Alertas.jsx
-│   ├── styles/
-│   │   └── Alertas.module.css
-│   └── App.jsx
-├── package.json
-├── README.md
-└── .env
-```
-
 ### 🛠️ Tecnologias Utilizadas
 - **Frontend: React.js
 - **Estilização: CSS Modules
 - **Backend: API em Node.js hospedada no Render
 - **Navegação: React Router
 - **Gerenciamento de Estado: React Hooks (useState, useEffect)
-- **Hospedagem: Render (API)
+- **Hospedagem: Render (API), Vercel (Frontend)
+
+---
 
 ### 🌐 API Endpoints
 - **GET /api/alertas: Retorna uma lista de alertas de postes inclinados.
