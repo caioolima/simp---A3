@@ -1,16 +1,22 @@
-SIMP - Sistema de Monitoramento de Postes
-Bem-vindo ao SIMP, um sistema desenvolvido para monitorar a inclinação de postes em tempo real, oferecendo uma interface intuitiva para visualizar alertas, detalhes dos chamados, e gerenciar possíveis problemas de infraestrutura urbana.
+# SIMP - Sistema de Monitoramento de Postes
 
-🚀 Funcionalidades Principais
-Monitoramento em Tempo Real: Detecta o grau de inclinação de postes e exibe alertas críticos.
-Gestão de Chamados: Exibição de chamados e formulários enviados por usuários.
-Navegação Detalhada: Permite acessar detalhes específicos de cada poste.
-Interface Responsiva: Compatível com dispositivos móveis, tablets e desktops.
-Modal de Detalhes: Visualização completa das informações de chamados.
-📁 Estrutura do Projeto
+Bem-vindo ao **SIMP**, um sistema desenvolvido para monitorar a inclinação de postes em tempo real, oferecendo uma interface intuitiva para visualizar alertas, detalhes dos chamados, e gerenciar possíveis problemas de infraestrutura urbana.
 
-arduino
+---
 
+### 🚀 Funcionalidades Principais
+
+- **Monitoramento em Tempo Real**: Detecta o grau de inclinação de postes e exibe alertas críticos.
+- **Gestão de Chamados**: Exibição de chamados e formulários enviados por usuários.
+- **Navegação Detalhada**: Permite acessar detalhes específicos de cada poste.
+- **Interface Responsiva**: Compatível com dispositivos móveis, tablets e desktops.
+- **Modal de Detalhes**: Visualização completa das informações de chamados.
+
+---
+
+### 📁 Estrutura do Projeto
+
+```plaintext
 SIMP/
 ├── public/
 ├── src/
@@ -28,79 +34,54 @@ SIMP/
 ├── package.json
 ├── README.md
 └── .env
+```
 
-🛠️ Tecnologias Utilizadas
+### 🛠️ Tecnologias Utilizadas
+- **Frontend: React.js
+- **Estilização: CSS Modules
+- **Backend: API em Node.js hospedada no Render
+- **Navegação: React Router
+- **Gerenciamento de Estado: React Hooks (useState, useEffect)
+- **Hospedagem: Render (API)
 
-Frontend: React.js
-Estilização: CSS Modules
-Backend: API em Node.js hospedada no Render
-Navegação: React Router
-Gerenciamento de Estado: React Hooks (useState, useEffect, useNavigate)
+### 🌐 API Endpoints
+- **GET /api/alertas: Retorna uma lista de alertas de postes inclinados.
+- **GET /api/form: Retorna uma lista de chamados e formulários enviados pelos usuários.
 
-📦 Dependências
+### ⚙️ Como Executar o Projeto
+- **Pré-requisitos
+- **Node.js instalado
+- **Gerenciador de pacotes npm ou yarn
 
-Antes de rodar o projeto, instale as dependências utilizando:
-npm install
-
-Principais pacotes utilizados:
-
-react
-react-router-dom
-react-scripts
-⚙️ Configuração do Ambiente
-Crie um arquivo .env na raiz do projeto e configure as variáveis de ambiente, se necessário. Exemplo:
-
-env
-
-🖥️ Como Executar o Projeto
-Clone o repositório:
-
+### Passos
+- **Clone o repositório:
+bash
+Copiar código
 git clone https://github.com/seu-usuario/simp.git
-cd simp
-Instale as dependências:
 
+- **Navegue para o diretório do projeto:
+bash
+Copiar código
+cd simp
+
+- **Instale as dependências:
+bash
+Copiar código
 npm install
-Inicie o projeto:
+Configure as variáveis de ambiente no arquivo .env.
+
+- **Inicie o servidor de desenvolvimento:
+
+bash
+Copiar código
 npm start
 
-O sistema estará disponível em http://localhost:3000.
+- **Acesse o projeto no navegador:
+http://localhost:3000
 
-📝 Rotas Implementadas
-Home: / - Página principal do sistema.
-Alertas: /alertas - Exibição dos alertas e chamados.
-Detalhes de Postes: /poste/:nomePoste - Página com informações detalhadas do poste selecionado.
-🔧 API Endpoints
+### 🎨 Estilização
+A estilização é feita com CSS Modules, garantindo encapsulamento de estilos. Os arquivos de estilos estão organizados na pasta src/styles.
 
-A aplicação consome os seguintes endpoints:
+### 📖 Licença
+Este projeto está licenciado sob a MIT License. Sinta-se à vontade para utilizá-lo, modificá-lo e distribuí-lo.
 
-Lista de Alertas: GET /api/alertas
-
-Retorna a lista de alertas de postes inclinados.
-Lista de Formulários: GET /api/form
-
-Retorna os chamados abertos pelos usuários.
-🎨 Design e Estilização
-O sistema utiliza CSS Modules para estilização, garantindo um código modular e isolado. As classes são organizadas no arquivo Alertas.module.css para cada página ou componente.
-
-Exemplos de Estilização
-Cards: Apresentação dos alertas e chamados com bordas arredondadas, sombras suaves e disposição responsiva.
-Botões: Ações com transições suaves, mantendo acessibilidade e um design atraente.
-📱 Responsividade
-A interface foi projetada para ser totalmente responsiva, adaptando-se a diferentes resoluções de tela. Media queries foram implementadas para layouts menores, como:
-
-css
-Copiar código
-@media (max-width: 768px) {
-  .alertItem {
-    width: calc(50% - 20px);
-  }
-}
-
-@media (max-width: 480px) {
-  .alertItem {
-    width: 100%;
-  }
-}
-
-📜 Licença
-Este projeto está sob a licença MIT. Sinta-se à vontade para utilizá-lo, modificá-lo e distribuí-lo.
